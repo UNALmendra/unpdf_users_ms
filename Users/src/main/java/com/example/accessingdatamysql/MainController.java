@@ -32,6 +32,8 @@ public class MainController {
   @PostMapping(path="/login")
   public @ResponseBody String doLogin(@RequestParam String email,
                                       @RequestParam String password){
+    System.out.println(email);
+    System.out.println(password);
     User userloginattempt = userRepository.findByEmail(email);
     if (userloginattempt == null){
       return "User not registered";
