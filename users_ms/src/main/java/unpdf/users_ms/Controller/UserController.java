@@ -86,5 +86,5 @@ public class UserController {
         AttributesMapper<String> mapper = (attrs) -> attrs.get("cn").get().toString();
         return this.ldap.search("ou=people", "uid=" + authentication.getName(), mapper);
     }
-    
+
 }
