@@ -26,10 +26,9 @@ public class UserController {
     private UserRepository userRepository;
     @Autowired
     private JwtService jwtService;
-    /*
     @Autowired
     private LdapTemplate ldap;
-    */
+
     @GetMapping("hello")
     public String hello(){
         return "Hello fellow user!";
@@ -77,7 +76,6 @@ public class UserController {
         return jwtService.validateToken(token);
     }
 
-    /*
     @GetMapping
     public String hello(Authentication authentication) {
         return "Hello, " + authentication.getName();
@@ -88,5 +86,5 @@ public class UserController {
         AttributesMapper<String> mapper = (attrs) -> attrs.get("cn").get().toString();
         return this.ldap.search("ou=people", "uid=" + authentication.getName(), mapper);
     }
-    */
+    
 }
