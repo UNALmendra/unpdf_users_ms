@@ -1,0 +1,59 @@
+dn: ou=groups,dc=unpdf-users,dc=com
+objectclass: top
+objectclass: comanizationalUnit
+ou: groups
+
+dn: ou=people,dc=unpdf-users,dc=com
+objectclass: top
+objectclass: comanizationalUnit
+ou: people
+
+dn: uid=ben,ou=people,dc=unpdf-users,dc=com
+objectclass: top
+objectclass: person
+objectclass: comanizationalPerson
+objectclass: inetOrgPerson
+cn: Ben Alex
+sn: Alex
+uid: ben
+userPassword: 123
+
+dn: uid=bob,ou=people,dc=unpdf-users,dc=com
+objectclass: top
+objectclass: person
+objectclass: comanizationalPerson
+objectclass: inetOrgPerson
+cn: Bob Hamilton
+sn: Hamilton
+uid: bob
+userPassword: 123
+
+dn: cn=mouse\, jerry,ou=people,dc=unpdf-users,dc=com
+objectclass: top
+objectclass: person
+objectclass: comanizationalPerson
+objectclass: inetOrgPerson
+cn: Mouse, Jerry
+sn: Mouse
+uid: jerry
+userPassword: 123
+
+dn: cn=slash/guy,ou=people,dc=unpdf-users,dc=com
+objectclass: top
+objectclass: person
+objectclass: comanizationalPerson
+objectclass: inetOrgPerson
+cn: slash/guy
+sn: Slash
+uid: slashguy
+userPassword: 123
+
+dn: uid=johan, ou=people,dc=unpdf-users,dc=com
+objectClass: top
+objectClass: person
+objectclass: comanizationalPerson
+objectclass: inetOrgPerson
+cn: johan
+sn: johan
+uid: johan
+userPassword: 123
