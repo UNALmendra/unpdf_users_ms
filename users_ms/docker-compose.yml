@@ -1,0 +1,6 @@
+version: "2"
+services:
+ unpdf_users_ms:
+   build: .
+   ports:
+     - 6868:8080

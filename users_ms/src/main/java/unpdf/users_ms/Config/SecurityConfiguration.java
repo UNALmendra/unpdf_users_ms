@@ -26,7 +26,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         // Do nothing, this is just overriding the default behavior in WebSecurityConfigurerAdapter
 
     }
-
+/*
     @Bean
     UnboundIdContainer ldapContainer() {
         UnboundIdContainer container = new UnboundIdContainer("dc=unpdf-users,dc=com", "classpath:ldap-server.ldif");
@@ -53,5 +53,5 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         provider.setUserDetailsContextMapper(new PersonContextMapper());
         return provider;
     }
-
+*/
 }

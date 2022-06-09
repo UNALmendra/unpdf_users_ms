@@ -1,5 +1,6 @@
 package unpdf.users_ms.Controller;
 
+import com.unboundid.util.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ldap.core.AttributesMapper;
 import org.springframework.ldap.core.LdapTemplate;
@@ -14,6 +15,7 @@ import unpdf.users_ms.Service.JwtService;
 import com.unboundid.ldap.sdk.controls.*;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -35,7 +37,10 @@ public class UserController {
     }
 
     @PostMapping("signin")
-    public TokenRes signIn(@RequestParam String username, @RequestParam String password){
+    public TokenRes signIn(@RequestBody Map<String, Object> payload){
+        String username = payload.get(new String("username")).toString();
+        String password = payload.get(new String("password")).toString();
+        System.out.println(username+"-"+password);
         if(username.equals("")){
             return new TokenRes(false,"Empty username");
         }
@@ -75,7 +80,7 @@ public class UserController {
     public boolean verifyToken(@RequestParam String token){
         return jwtService.validateToken(token);
     }
-
+/*
     @GetMapping
     public String hello(Authentication authentication) {
         return "Hello, " + authentication.getName();
@@ -86,5 +91,5 @@ public class UserController {
         AttributesMapper<String> mapper = (attrs) -> attrs.get("cn").get().toString();
         return this.ldap.search("ou=people", "uid=" + authentication.getName(), mapper);
     }
-
+*/
 }
